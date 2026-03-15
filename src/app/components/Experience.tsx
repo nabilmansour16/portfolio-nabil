@@ -54,7 +54,7 @@ export default function Experience() {
             Experience
           </h2>
           <span className="text-sm text-gray-400 font-medium">
-            What I've done
+            What I&apos;ve done
           </span>
         </div>
 

@@ -35,9 +35,9 @@ export default function Hero() {
           <div className="p-10 flex items-center animate-fade-up delay-100">
             <blockquote className="border-l-2 border-[#3b82f6] pl-6">
               <p className="text-gray-700 italic leading-relaxed text-base">
-                "Motivated, autonomous, and team-driven. I care about full-stack
+                &quot;Motivated, autonomous, and team-driven. I care about full-stack
                 development, interactive systems, and solving real problems —
-                especially at hackathons."
+                especially at hackathons.&quot;
               </p>
             </blockquote>
           </div>
