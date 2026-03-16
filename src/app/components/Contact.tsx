@@ -51,7 +51,7 @@ export default function Contact() {
             GitHub
           </a>
           <a
-            href="https://www.linkedin.com/in/mansournabil"
+            href="https://www.linkedin.com/in/nabil-mansour-b0484b397/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-gray-300 bg-white text-gray-700 text-sm font-medium hover:border-[#3b82f6] hover:text-[#3b82f6] transition-colors"

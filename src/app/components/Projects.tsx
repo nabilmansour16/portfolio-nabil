@@ -80,22 +80,22 @@ export default function Projects() {
           </span>
         </div>
 
-        <div className="grid grid-cols-6 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {projects.map((p) => {
             // Certification card
             if ((p as { isCert?: boolean }).isCert) {
               return (
                 <div
                   key={p.id}
-                  className={`${p.span} bento-card rounded-xl border border-gray-200 bg-white p-8 flex flex-col justify-between min-h-[220px]`}
+                  className="bento-card rounded-xl border border-gray-200 bg-white p-8 flex flex-col justify-between min-h-[220px] transition-all hover:border-[#bfdbfe] hover:shadow-md group cursor-default"
                 >
                   <span className="text-xs font-semibold uppercase tracking-widest text-[#3b82f6]">
                     Certified
                   </span>
                   <div>
-                    <div className="w-12 h-12 rounded-full bg-[#eff6ff] border border-[#bfdbfe] flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 rounded-full bg-[#eff6ff] border border-[#bfdbfe] flex items-center justify-center mb-4 group-hover:bg-[#3b82f6] transition-colors">
                       <svg
-                        className="w-6 h-6 text-[#3b82f6]"
+                        className="w-6 h-6 text-[#3b82f6] group-hover:text-white transition-colors"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -122,7 +122,7 @@ export default function Projects() {
               return (
                 <div
                   key={p.id}
-                  className={`${p.span} bento-card rounded-xl border border-[#bfdbfe] bg-[#eff6ff] p-8 flex flex-col gap-4 min-h-[280px]`}
+                  className="bento-card rounded-xl border border-[#bfdbfe] bg-[#eff6ff] p-6 md:p-8 flex flex-col gap-4 min-h-[280px] transition-all hover:shadow-lg hover:-translate-y-0.5 cursor-default"
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-semibold uppercase tracking-widest text-[#3b82f6]">
@@ -136,17 +136,17 @@ export default function Projects() {
                       </span>
                     )}
                   </div>
-                  <h3 className="font-grotesk font-bold text-2xl text-gray-900">
+                  <h3 className="font-grotesk font-bold text-2xl md:text-3xl text-gray-900">
                     {p.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed flex-1">
+                  <p className="text-gray-600 text-sm md:text-base leading-relaxed flex-1">
                     {p.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mt-auto">
                     {p.pills.map((pill) => (
                       <span
                         key={pill}
-                        className="px-3 py-1 rounded-full bg-white border border-[#bfdbfe] text-xs font-medium text-[#3b82f6]"
+                        className="px-3 py-1.5 rounded-full bg-white border border-[#bfdbfe] text-xs font-semibold text-[#3b82f6] shadow-sm"
                       >
                         {pill}
                       </span>
@@ -160,11 +160,11 @@ export default function Projects() {
             return (
               <div
                 key={p.id}
-                className={`${p.span} bento-card rounded-xl border border-gray-200 bg-white p-7 flex flex-col gap-3 min-h-[220px]`}
+                className="bento-card rounded-xl border border-gray-200 bg-white p-6 md:p-7 flex flex-col gap-3 min-h-[220px] transition-all hover:border-[#bfdbfe] hover:shadow-md group cursor-default"
               >
                 <div className="flex items-start justify-between">
                   {p.num && (
-                    <span className="font-grotesk font-bold text-5xl text-[#bfdbfe] leading-none">
+                    <span className="font-grotesk font-bold text-4xl md:text-5xl text-[#bfdbfe] leading-none group-hover:text-[#3b82f6] transition-colors">
                       {p.num}
                     </span>
                   )}
@@ -176,17 +176,17 @@ export default function Projects() {
                     </span>
                   )}
                 </div>
-                <h3 className="font-grotesk font-semibold text-lg text-gray-900 -mt-1">
+                <h3 className="font-grotesk font-semibold text-lg text-gray-900 mt-2 md:-mt-1 group-hover:text-[#3b82f6] transition-colors">
                   {p.title}
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed flex-1">
                   {p.description}
                 </p>
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-1.5 md:gap-2 pt-2">
                   {p.pills.map((pill) => (
                     <span
                       key={pill}
-                      className="px-2.5 py-1 rounded-full bg-gray-100 text-xs font-medium text-gray-600"
+                      className="px-2.5 py-1 rounded-full bg-gray-50 border border-gray-100 text-xs font-medium text-gray-600 group-hover:bg-gray-100 transition-colors"
                     >
                       {pill}
                     </span>
