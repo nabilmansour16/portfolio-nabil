@@ -83,37 +83,24 @@ export default function Projects() {
               return (
                 <div
                   key={p.id}
-                  className="bento-card rounded-xl border border-gray-200 bg-white p-8 flex flex-col justify-between min-h-[220px] transition-all hover:border-[#bfdbfe] hover:shadow-md group cursor-default"
+                  className="bento-card relative rounded-xl border border-gray-200 bg-white min-h-[220px] transition-all hover:border-[#bfdbfe] hover:shadow-md group cursor-default overflow-hidden"
                 >
-                  <span className="text-xs font-semibold uppercase tracking-widest text-[#3b82f6]">
-                    Certified
-                  </span>
-                  <div>
-                    {(p as any).image ? (
-                      <div className="w-16 h-16 rounded-xl bg-[#eff6ff] border border-[#bfdbfe] flex items-center justify-center mb-4 overflow-hidden relative shadow-sm">
-                        <Image src={(p as any).image} alt={p.title} fill className="object-contain p-1.5 mix-blend-multiply" />
-                      </div>
-                    ) : (
-                      <div className="w-12 h-12 rounded-full bg-[#eff6ff] border border-[#bfdbfe] flex items-center justify-center mb-4 group-hover:bg-[#3b82f6] transition-colors">
-                        <svg
-                          className="w-6 h-6 text-[#3b82f6] group-hover:text-white transition-colors"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={1.5}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.745 3.745 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.745 3.745 0 0 1 3.296-1.043A3.745 3.745 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.745 3.745 0 0 1 3.296 1.043 3.745 3.745 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z"
-                          />
-                        </svg>
-                      </div>
+                  <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+                    {(p as any).image && (
+                      <Image src={(p as any).image} alt={p.title} fill className="object-cover" />
                     )}
-                    <h3 className="font-grotesk font-semibold text-lg text-gray-900">
-                      {p.title}
-                    </h3>
-                    <p className="text-sm text-gray-500 mt-1">{(p as { subtitle?: string }).subtitle}</p>
+                  </div>
+
+                  <div className="relative z-10 p-8 flex flex-col justify-between h-full min-h-[220px]">
+                    <span className="text-xs font-semibold uppercase tracking-widest text-[#3b82f6]">
+                      Certified
+                    </span>
+                    <div className="mt-8">
+                      <h3 className="font-grotesk font-semibold text-lg text-gray-900 group-hover:text-[#3b82f6] transition-colors">
+                        {p.title}
+                      </h3>
+                      <p className="text-sm text-gray-500 mt-1">{(p as { subtitle?: string }).subtitle}</p>
+                    </div>
                   </div>
                 </div>
               );
