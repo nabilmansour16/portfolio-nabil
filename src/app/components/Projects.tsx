@@ -86,8 +86,8 @@ export default function Projects() {
                   className="bento-card relative rounded-xl border border-gray-200 bg-white min-h-[220px] transition-all hover:border-[#bfdbfe] hover:shadow-md group cursor-default overflow-hidden"
                 >
                   <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
-                    {(p as any).image && (
-                      <Image src={(p as any).image} alt={p.title} fill className="object-cover" />
+                    {(p as { image?: string }).image && (
+                      <Image src={(p as { image?: string }).image as string} alt={p.title} fill className="object-cover" />
                     )}
                   </div>
 
